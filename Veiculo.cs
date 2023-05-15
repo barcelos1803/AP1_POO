@@ -16,6 +16,10 @@ public abstract class Veiculo
         Placa = placa;
         Modelo = modelo;
     }
+    public Veiculo()
+    {
+        
+    }
 
     // Método abstrato para calcular o valor da estadia
     public abstract decimal CalcularValorEstadia(int horas);

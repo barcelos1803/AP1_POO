@@ -28,7 +28,7 @@ public class Moto : Veiculo
     public override void ExibirDados()
     {
             Console.WriteLine($"Placa: {Placa}");
-            Console.WriteLine($"Modelo: {Modelo}");
+            Console.WriteLine($"Modelo da moto: {Modelo}");
             Console.WriteLine($"Tipo: {Tipo}");
     }
 

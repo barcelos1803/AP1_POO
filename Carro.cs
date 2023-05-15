@@ -20,7 +20,7 @@ public class Carro : Veiculo
     public override void ExibirDados()
     {
             Console.WriteLine($"Placa: {Placa}");
-            Console.WriteLine($"Modelo: {Modelo}");
+            Console.WriteLine($"Modelo do carro: {Modelo}");
             Console.WriteLine($"Tipo: {Tipo}");
     }
 }
