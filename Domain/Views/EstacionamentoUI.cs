@@ -9,6 +9,10 @@ namespace Domain.Views
         private readonly IEstacionamentoRepository _estacionamentoRepository;
         private readonly IProprietarioRepository _proprietarioRepository;
 
+        public EstacionamentoUI()
+        {
+        }
+
         public EstacionamentoUI(IVeiculoRepository veiculoRepository, IEstacionamentoRepository estacionamentoRepository, IProprietarioRepository proprietarioRepository)
         {
             _veiculoRepository = veiculoRepository;
