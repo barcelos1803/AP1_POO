@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Domain.Views;
 
 public class Program
 {
     static void Main(string[] args)
         {
-           EstacionamentoUI.Iniciar();
+        //    EstacionamentoUI.Iniciar();
         }
 }
