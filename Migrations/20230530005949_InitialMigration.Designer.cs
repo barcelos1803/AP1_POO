@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AP1.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230529221341_refatoradoUI")]
-    partial class refatoradoUI
+    [Migration("20230530005949_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace AP1.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Numero")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("Ocupada")

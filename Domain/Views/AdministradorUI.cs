@@ -6,14 +6,22 @@ namespace Domain.Views
     
    public class AdministradorUI
     {
+
         private readonly IVeiculoRepository _veiculoRepository;
         private readonly IEstacionamentoRepository _estacionamentoRepository;
+        private readonly IProprietarioRepository _proprietarioRepository;
 
-        public AdministradorUI(IVeiculoRepository veiculoRepository, IEstacionamentoRepository estacionamentoRepository)
+        public AdministradorUI()
+        {
+        }
+
+        public AdministradorUI(IVeiculoRepository veiculoRepository, IEstacionamentoRepository estacionamentoRepository, IProprietarioRepository proprietarioRepository)
         {
             _veiculoRepository = veiculoRepository;
             _estacionamentoRepository = estacionamentoRepository;
+            _proprietarioRepository = proprietarioRepository;
         }
+
 
         public void Iniciar()
         {

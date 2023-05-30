@@ -40,6 +40,9 @@ namespace AP1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("Numero")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("Ocupada")
                         .HasColumnType("INTEGER");
 

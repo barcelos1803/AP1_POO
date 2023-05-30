@@ -15,9 +15,9 @@ namespace Data.Context
             => options.UseSqlite($"Data Source={DbPath}");
         public DbSet<Proprietario> Proprietarios { get; set; }
         public DbSet<Vaga> Vagas { get; set; }
+        public DbSet<Veiculo> Veiculos { get; set; }
         public DbSet<Carro> Carros { get; set; }
         public DbSet<Moto> Motos { get; set; }
-        public DbSet<Veiculo> Veiculos { get; set; }
 
 
     }

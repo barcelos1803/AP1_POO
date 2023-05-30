@@ -2,36 +2,33 @@ using Data.Context;
 using Domain.Entities;
 using Domain.Interfaces;
 
-public class EstacionamentoRepository:IEstacionamentoRepository
+public class EstacionamentoRepository : IEstacionamentoRepository
 {
     private readonly DataContext context;
-    // //construtuor
+
     public EstacionamentoRepository(DataContext context)
     {
         this.context = context;
     }
 
-    // Retorna as vagas ocupadas
     public List<Vaga> ObterVagasOcupadas()
     {
-        return context.Vagas.Where(v => v.Ocupada == true).ToList();
+        return context.Vagas.Where(v => v.Ocupada).ToList();
     }
 
-    // Retorna as vagas livres
     public List<Vaga> ObterVagasLivres()
     {
-        return context.Vagas.Where(v => v.Ocupada == false).ToList();
-
+        return context.Vagas.Where(v => !v.Ocupada).ToList();
     }
 
-    // Estaciona um veículo em uma vaga livre
     public void Estacionar(Veiculo veiculo)
     {
-        var vaga = context.Vagas.FirstOrDefault(v => v.Ocupada == false);
+        var vaga = context.Vagas.FirstOrDefault(v => !v.Ocupada);
 
         if (vaga != null)
         {
-            vaga.Ocupar(veiculo);
+            vaga.Ocupada = true;
+            vaga.Veiculo = veiculo;
             context.SaveChanges();
         }
         else
@@ -40,23 +37,23 @@ public class EstacionamentoRepository:IEstacionamentoRepository
         }
     }
 
-    // Desocupa uma vaga
     public void Desocupar(int id)
     {
         var vaga = context.Vagas.FirstOrDefault(v => v.Id == id);
 
         if (vaga != null)
         {
-            vaga.Desocupar();
+            vaga.Ocupada = false;
+            vaga.Veiculo = null;
+            context.SaveChanges();
         }
     }
-    // Retorna uma vaga pelo ID
+
     public Vaga GetById(int entityid)
     {
         return context.Vagas.FirstOrDefault(v => v.Id == entityid);
     }
 
-    // Retorna todas as vagas
     public IList<Vaga> GetAll()
     {
         return context.Vagas.ToList();
@@ -78,5 +75,21 @@ public class EstacionamentoRepository:IEstacionamentoRepository
     public void Update(Vaga entity)
     {
         context.Vagas.Update(entity);
+        context.SaveChanges();
     }
-} 
+
+    public static void InicializarEstacionamento(IEstacionamentoRepository estacionamentoRepository, int Numero)
+    {
+        for (int i = 1; i <= Numero; i++)
+        {
+            var vaga = new Vaga(i);
+            estacionamentoRepository.AdicionarVaga(vaga);
+        }
+    }
+
+    public void AdicionarVaga(Vaga vaga)
+    {
+        context.Vagas.Add(vaga);
+        context.SaveChanges();
+    }
+}

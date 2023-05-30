@@ -8,5 +8,7 @@ namespace Domain.Interfaces
         public List<Vaga> ObterVagasLivres();
         public void Estacionar(Veiculo veiculo);
         public void Desocupar(int numero);
+
+        void AdicionarVaga(Vaga vaga);
     }
 }

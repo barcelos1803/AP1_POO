@@ -4,13 +4,14 @@ namespace Domain.Entities
     public class Vaga : Entity
     {
         // Propriedades
-        public bool Ocupada { get; private set; }
-        public Veiculo Veiculo { get; private set; }
+        public int Numero { get; set; }
+        public bool Ocupada { get; set; }
+        public Veiculo Veiculo { get; set; }
 
         // Construtor
-        public Vaga(int id)
+        public Vaga(int numero)
         {
-            Id = id;
+            Numero = numero;
             Ocupada = false;
         }
 

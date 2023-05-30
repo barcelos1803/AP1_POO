@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Domain.Views
 {
@@ -51,7 +52,6 @@ namespace Domain.Views
 
                         Console.WriteLine("Digite o tipo do veículo (1 - Carro, 2 - Moto): ");
                         string tipoVeiculo = Console.ReadLine();
-                        
                         Proprietario proprietario = new Proprietario(nome, cpf);
                         Veiculo veiculo;
 
@@ -72,9 +72,9 @@ namespace Domain.Views
 
                         try
                         {
-                            _estacionamentoRepository.Estacionar(veiculo);
-                            _veiculoRepository.Save(veiculo);
                             _proprietarioRepository.Save(proprietario);
+                            _veiculoRepository.Save(veiculo);
+                            _estacionamentoRepository.Estacionar(veiculo);
 
                             Console.WriteLine();
                             Console.WriteLine("== VEÍCULO REGISTRADO ==");
@@ -87,9 +87,10 @@ namespace Domain.Views
                             Console.ReadKey();
                             Console.WriteLine();
                         }
-                        catch (Exception ex)
+                        catch (DbUpdateException ex)
                         {
-                            Console.WriteLine(ex.Message);
+                            var innerException = ex.InnerException;
+                            Console.WriteLine("Mensagem da exceção interna: " + innerException.Message);
                             Console.WriteLine();
 
                             Console.WriteLine("Pressione uma tecla para voltar ao menu.");
@@ -99,11 +100,11 @@ namespace Domain.Views
                         break;
                     case "2":
                         Console.WriteLine("Digite o número da vaga: ");
-                        int numeroVaga = Convert.ToInt32(Console.ReadLine());
+                        int Numero = Convert.ToInt32(Console.ReadLine());
 
-                        _estacionamentoRepository.Desocupar(numeroVaga);
+                        _estacionamentoRepository.Desocupar(Numero);
                         Console.WriteLine();
-                        Console.WriteLine($"Vaga {numeroVaga} desocupada.");
+                        Console.WriteLine($"Vaga {Numero} desocupada.");
                         Console.WriteLine();
 
                         Console.WriteLine("Pressione uma tecla para voltar ao menu.");
@@ -128,7 +129,7 @@ namespace Domain.Views
                         Console.WriteLine();
                         break;
                     case "4":
-                        AdministradorUI administradorUI = new AdministradorUI(_veiculoRepository, _estacionamentoRepository);
+                        AdministradorUI administradorUI = new AdministradorUI(_veiculoRepository, _estacionamentoRepository, _proprietarioRepository);
                         administradorUI.Iniciar();
                         break;
                     case "5":

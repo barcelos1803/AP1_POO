@@ -52,6 +52,7 @@ namespace AP1.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Numero = table.Column<int>(type: "INTEGER", nullable: false),
                     Ocupada = table.Column<bool>(type: "INTEGER", nullable: false),
                     VeiculoId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
