@@ -1,22 +1,29 @@
-using Data.Context;
-using Data.Repositories;
-using Domain.Entities;
-using Domain.Interfaces;
-using Domain.Views;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
-public class Program
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
 {
-    static void Main(string[] args)
-    {
-        var db = new DataContext();
-        IVeiculoRepository veiculoRepository = new VeiculosRepository(db);
-        IEstacionamentoRepository estacionamentoRepository = new EstacionamentoRepository(db);
-
-        EstacionamentoRepository.InicializarEstacionamento(estacionamentoRepository, 20);
-
-        IProprietarioRepository proprietarioRepository = new ProprietarioRepository(db);
-
-        EstacionamentoUI estacionamentoUI = new EstacionamentoUI(veiculoRepository, estacionamentoRepository, proprietarioRepository);
-        estacionamentoUI.Iniciar();
-    }
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
+
+//app.UseHttpsRedirection();
+
+//app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

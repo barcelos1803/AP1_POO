@@ -20,16 +20,7 @@ C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Entity
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Sqlite.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.Logging.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
-C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.Extensions.Primitives.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\SQLitePCLRaw.batteries_v2.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\SQLitePCLRaw.core.dll
@@ -59,3 +50,8 @@ C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\runtimes\win-arm
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\runtimes\win-x86\native\e_sqlite3.dll
 C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\obj\Debug\net7.0\AP1.csproj.CopyComplete
+C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Microsoft.OpenApi.dll
+C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\marcu\Desktop\faculdade\sem 3\POO\AP1\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
