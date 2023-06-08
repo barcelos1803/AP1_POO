@@ -1,5 +1,6 @@
 
 using Microsoft.AspNetCore.Mvc;
+using Models.Data.Context;
 using Models.Domain.Entities;
 using Models.Domain.Interfaces;
 
@@ -9,28 +10,28 @@ namespace Controllers.EstacionamentoController
     [Route("api/[controller]")]
     public class EstacionamentoController : ControllerBase
     {
-        private readonly IEstacionamentoRepository repositiory;
+        private readonly IEstacionamentoRepository repository;
 
         public EstacionamentoController()
         {
-            this.repositiory = new EstacionamentoRepository();
+            this.repository = new EstacionamentoRepository();
         }
 
         [HttpGet]
         public IEnumerable<Vaga>Get()
         {
-            return repositiory.GetAll();
+            return repository.GetAll();
         }
         [HttpGet("{id}")]
         public Vaga Get(int id)
         {
-            return repositiory.GetById(id);
+            return repository.GetById(id);
         }
 
         [HttpPost]
         public IActionResult Post([FromBody]Vaga item)
         {
-            repositiory.Save(item);
+            repository.Save(item);
             return Ok( new {
                 statusCode=200,
                 message = "Estacionado com sucesso",
@@ -41,7 +42,7 @@ namespace Controllers.EstacionamentoController
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            repositiory.Delete(id);
+            repository.Delete(id);
             return Ok( new {
                 statusCode=200,
                 message = "Vaga excluída com sucesso"
@@ -50,7 +51,7 @@ namespace Controllers.EstacionamentoController
         [HttpPut]
         public IActionResult Put([FromBody]Vaga item)
         {
-            repositiory.Update(item);
+            repository.Update(item);
             return Ok( new {
                 statusCode=200,
                 message = item.Veiculo + " atualizado com sucesso",
