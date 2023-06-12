@@ -3,49 +3,52 @@ using Models.Domain.Entities;
 using Models.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-public class VeiculosRepository :IVeiculoRepository
+namespace Models.Data.Repositories
 {
-    private readonly DataContext context;
-    // //construtuor
-    public VeiculosRepository(DataContext context)
+    public class VeiculosRepository :IVeiculoRepository
     {
-        this.context = context;
-    }
-    public void Delete(int entityid)
-    {
-        var v = GetById(entityid);
-        context.Veiculos.Remove(v);
-        context.SaveChanges();
-    }
-    // Retorna todos os veículos
-    public IList<Veiculo> GetAll()
-    {
-        return context.Veiculos.Include(x=>x.Proprietario).ToList();
-    }
-    // Retorna um veículo por ID
-    public Veiculo GetById(int entityid)
-    {
-        return context.Veiculos.Include(x=>x.Proprietario).SingleOrDefault(x=>x.Id == entityid);
-    }
+        private readonly DataContext context;
+        // //construtuor
+        public VeiculosRepository()
+        {
+            this.context = new DataContext();
+        }
+        public void Delete(int entityid)
+        {
+            var v = GetById(entityid);
+            context.Veiculos.Remove(v);
+            context.SaveChanges();
+        }
+        // Retorna todos os veículos
+        public IList<Veiculo> GetAll()
+        {
+            return context.Veiculos.Include(x=>x.Proprietario).ToList();
+        }
+        // Retorna um veículo por ID
+        public Veiculo GetById(int entityid)
+        {
+            return context.Veiculos.Include(x=>x.Proprietario).SingleOrDefault(x=>x.Id == entityid);
+        }
 
-    // Retorna um veículo pela placa
-    public Veiculo ObterPorPlaca(string placa)
-    {
-        return context.Veiculos.SingleOrDefault(x=>x.Placa == placa);
-    }
+        // Retorna um veículo pela placa
+        public Veiculo ObterPorPlaca(string placa)
+        {
+            return context.Veiculos.SingleOrDefault(x=>x.Placa == placa);
+        }
 
-    public void Save(Veiculo entity)
-    {
-        entity.Proprietario = context.Proprietarios.SingleOrDefault(x=>x.Id == entity.Proprietario.Id);
-        context.Add(entity);
-        context.SaveChanges();
-    }
+        public void Save(Veiculo entity)
+        {
+            entity.Proprietario = context.Proprietarios.SingleOrDefault(x=>x.Id == entity.Proprietario.Id);
+            context.Add(entity);
+            context.SaveChanges();
+        }
 
-    public void Update(Veiculo entity)
-    {
-        entity.Proprietario = context.Proprietarios.SingleOrDefault(x=>x.Id == entity.Proprietario.Id);
-        context.Veiculos.Update(entity);
-        context.SaveChanges();
+        public void Update(Veiculo entity)
+        {
+            entity.Proprietario = context.Proprietarios.SingleOrDefault(x=>x.Id == entity.Proprietario.Id);
+            context.Veiculos.Update(entity);
+            context.SaveChanges();
+        }
     }
 }
 

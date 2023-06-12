@@ -9,12 +9,12 @@ public class ExecuteConsole
     static void ExecuteConsoleLog(string[] args)
     {
         var db = new DataContext();
-        IVeiculoRepository veiculoRepository = new VeiculosRepository(db);
-        IEstacionamentoRepository estacionamentoRepository = new EstacionamentoRepository(db);
+        IVeiculoRepository veiculoRepository = new VeiculosRepository();
+        IEstacionamentoRepository estacionamentoRepository = new EstacionamentoRepository();
 
         EstacionamentoRepository.InicializarEstacionamento(estacionamentoRepository, 20);
 
-        IProprietarioRepository proprietarioRepository = new ProprietarioRepository(db);
+        IProprietarioRepository proprietarioRepository = new ProprietarioRepository();
 
         EstacionamentoUI estacionamentoUI = new EstacionamentoUI(veiculoRepository, estacionamentoRepository, proprietarioRepository);
         estacionamentoUI.Iniciar();

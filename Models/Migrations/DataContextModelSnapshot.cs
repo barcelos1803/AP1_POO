@@ -31,7 +31,7 @@ namespace AP1.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Proprietarios");
+                    b.ToTable("Proprietarios", (string)null);
                 });
 
             modelBuilder.Entity("Models.Domain.Entities.Vaga", b =>
@@ -53,7 +53,7 @@ namespace AP1.Migrations
 
                     b.HasIndex("VeiculoId");
 
-                    b.ToTable("Vagas");
+                    b.ToTable("Vagas", (string)null);
                 });
 
             modelBuilder.Entity("Models.Domain.Entities.Veiculo", b =>
@@ -79,7 +79,7 @@ namespace AP1.Migrations
 
                     b.HasIndex("ProprietarioId");
 
-                    b.ToTable("Veiculos");
+                    b.ToTable("Veiculos", (string)null);
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Veiculo");
 

@@ -10,6 +10,11 @@ namespace Models.Domain.Entities
             Cpf = cpf;
         }
 
+        public Proprietario()
+        {
+            
+        }
+
         public string Cpf { get; set; }
         public string Nome { get; set; }
 

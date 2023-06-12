@@ -8,6 +8,11 @@ namespace Models.Domain.Entities
             Modelo = modelo;
         }
 
+        public Moto()
+        {
+
+        }
+        
         public override string Tipo { get { return "Moto"; } }
 
 

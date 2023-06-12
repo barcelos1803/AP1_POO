@@ -9,9 +9,9 @@ namespace Models.Data.Repositories
     {
         private readonly DataContext context;
         // //construtuor
-        public ProprietarioRepository(DataContext context)
+        public ProprietarioRepository()
         {
-            this.context = context;
+            this.context = new DataContext();
         }
         public void Delete(int entityid)
         {
