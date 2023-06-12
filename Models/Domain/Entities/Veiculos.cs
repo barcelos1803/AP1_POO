@@ -16,13 +16,13 @@ namespace Models.Domain.Entities
             // Construtor sem parâmetros
         }
 
-        // Método abstrato para calcular o valor da estadia
-        public abstract decimal CalcularValorEstadia(int horas);
+        // // Método abstrato para calcular o valor da estadia
+        // public abstract decimal CalcularValorEstadia(int horas);
 
-        // Método para exibir informações do veículo
-        public virtual void ExibirDados()
-        {
-            Console.WriteLine($"proprietario: {Proprietario.Nome}Id: {Id}- Placa: {Placa}- Modelo: {Modelo} - Tipo: {Tipo}");
-        }
+        // // Método para exibir informações do veículo
+        // public virtual void ExibirDados()
+        // {
+        //     Console.WriteLine($"proprietario: {Proprietario.Nome}Id: {Id}- Placa: {Placa}- Modelo: {Modelo} - Tipo: {Tipo}");
+        // }
     }
 }

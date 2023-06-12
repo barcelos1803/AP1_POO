@@ -19,16 +19,16 @@ namespace Models.Domain.Entities
             
         }
 
-            public void Ocupar(Veiculo veiculo)
-        {
-            Ocupada = true;
-            Veiculo = veiculo;
-        }
+        //     public void Ocupar(Veiculo veiculo)
+        // {
+        //     Ocupada = true;
+        //     Veiculo = veiculo;
+        // }
 
-            public void Desocupar()
-        {
-            Ocupada = false;
-            Veiculo = null;
-        }
+        //     public void Desocupar()
+        // {
+        //     Ocupada = false;
+        //     Veiculo = null;
+        // }
     }
 }
